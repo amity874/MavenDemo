@@ -1,13 +1,14 @@
 package MessageService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
  * @Component will tell spring to create object
  * Go and create the Bean  named --wattsAppService
  * in spring container
- */
+ **/
 @Component
 public class WhatsAppService implements MessageService{
     /**
@@ -15,6 +16,7 @@ public class WhatsAppService implements MessageService{
      * I want to spring to inject message object
      */
     @Autowired//bring message bean and this will be no more null now
+    @Qualifier("frenchMessage")
     private Message message;
     @Override
     public void SendMessage(){
